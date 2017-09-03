@@ -1,10 +1,7 @@
 package gavel.CLI
 import java.io.File
-import breeze.linalg.SparseVector
-import gavel.textUtils.parsers.BleiParser
 import scopt.OptionParser
 
-import gavel.lda.{LDAModel, GibbsSettings, GibbsLDA}
 
 /**
   * Created by afenton on 3/12/16.
@@ -55,12 +52,12 @@ object CLI extends App {
 
         case "LDA" => {
           println("Parsing Docs")
-          val (docs, vocabSize) = BleiParser.parse(config.docs.get)
+//          val (docs, vocabSize) = BleiParser.parse(config.docs.get)
 
           println("Running Sampler")
-          val sampler = new GibbsLDA(1.0, 1.0, 50, GibbsSettings(burnin = 2, iterations = 4, lag = 2))
-          val model = sampler.fit(docs, vocabSize)
-          println(model.assignments)
+//          val sampler = new GibbsLDA(1.0, 1.0, 50, GibbsSettings(burnin = 2, iterations = 4, lag = 2))
+//          val model = sampler.fit(docs, vocabSize)
+//          println(model.assignments)
         }
         case _ => {}
 
